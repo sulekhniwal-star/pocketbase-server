@@ -3,7 +3,7 @@
 # create admin if database is empty
 if [ ! -f /pb_data/data.db ]; then
   echo "Creating first admin..."
-  ./pocketbase superuser create admin@example.com password123
+  ./pocketbase superuser create sulekhniwal@gmail.com Princy@2004
 fi
 
 echo "Starting PocketBase..."
