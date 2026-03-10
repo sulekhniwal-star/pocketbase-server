@@ -1,6 +1,6 @@
-FROM alpine:3.20
+FROM alpine:latest
 
-RUN apk add --no-cache curl unzip
+RUN apk add --no-cache unzip curl
 
 WORKDIR /app
 
@@ -8,9 +8,7 @@ RUN curl -L https://github.com/pocketbase/pocketbase/releases/download/v0.23.0/p
  && unzip pb.zip \
  && rm pb.zip
 
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
+EXPOSE 8090
 
-EXPOSE 8080
-
-CMD ["/app/start.sh"]
+CMD ./pocketbase serve --http=0.0.0.0:8090 --dir=/pb_data && \
+    ./pocketbase superuser create admin@example.com password123 
