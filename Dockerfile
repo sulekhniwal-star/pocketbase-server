@@ -10,4 +10,4 @@ RUN curl -L https://github.com/pocketbase/pocketbase/releases/download/v0.23.0/p
 
 EXPOSE 8090
 
-CMD ./pocketbase serve --http=0.0.0.0:8090 --dir=/pb_data && ./pocketbase superuser upsert admin@fitkarma.com Fitkarma@123
+CMD ./pocketbase serve --http=0.0.0.0:8090 --dir=/pb_data
